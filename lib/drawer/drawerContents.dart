@@ -22,6 +22,7 @@ class DrawerContents extends StatelessWidget {
 									'Profile', 
 								),
 								onTap: () {
+									// Pass random data to emulate logged in user
 									Navigator.pushNamed(context, "/profile");
 								},
 							),
@@ -35,7 +36,7 @@ class DrawerContents extends StatelessWidget {
 							),
 							ListTile(
 								title: Text(
-									'Folowing', 
+									'Following', 
 								),
 								onTap: () {
 									Navigator.pushNamed(context, "/following");

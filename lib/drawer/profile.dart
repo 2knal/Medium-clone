@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import '../arguments.dart';
 
 class Profile extends StatelessWidget {
 	
 	@override
 	Widget build(BuildContext context) {
+
+		final ScreenArguments args = ModalRoute.of(context).settings.arguments;
+		String name = args == null ? 'logged in user' : args.name;
+		// print(args);
+
 		return MaterialApp(
 			darkTheme: ThemeData(
 				brightness: Brightness.dark
@@ -16,8 +22,9 @@ class Profile extends StatelessWidget {
 						onPressed:() => Navigator.pop(context, false),
 					)
 				),
+        		// Real Stuff goes here!
 				body: Center(
-					child: Text('Profile'),
+					child: Text('Profile of ' + name),
 				),
 			),
 		);
