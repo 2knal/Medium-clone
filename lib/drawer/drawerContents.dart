@@ -8,17 +8,13 @@ class DrawerContents extends StatelessWidget {
 			padding: EdgeInsets.zero,
 			children: <Widget>[
 				DrawerHeader(
-					child: Text(
-						'Drawer Header', 
-						style: TextStyle(color: Colors.white),
-					),
+					child: Icon(Icons.account_circle, size: 150.0,),
 					decoration: BoxDecoration(
-						color: Colors.black87,
+						color: Colors.black45,
 					),
 				),
 				Container(
-					
-					color: Colors.black45,
+					//color: Colors.black45,
 					child: Column(
 						children: <Widget>[
 							ListTile(
@@ -26,7 +22,7 @@ class DrawerContents extends StatelessWidget {
 									'Profile', 
 								),
 								onTap: () {
-									Navigator.pop(context);
+									Navigator.pushNamed(context, "/profile");
 								},
 							),
 							ListTile(
@@ -34,7 +30,7 @@ class DrawerContents extends StatelessWidget {
 									'Followers', 
 								),
 								onTap: () {
-									Navigator.pop(context);
+									Navigator.pushNamed(context, "/follower");
 								},
 							),
 							ListTile(
@@ -42,7 +38,7 @@ class DrawerContents extends StatelessWidget {
 									'Folowing', 
 								),
 								onTap: () {
-									Navigator.pop(context);
+									Navigator.pushNamed(context, "/following");
 								},
 							),
 						],
