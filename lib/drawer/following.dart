@@ -1,7 +1,42 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
+import 'dart:convert';
 
-class Following extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+import './loader.dart';
+
+class Following extends StatefulWidget {
+	@override
+	FollowingState createState() => new FollowingState();
+}
+
+class FollowingState extends State<Following> {
+
+	var data, load = true;	
 	
+	Future<String> getData() async {
+		var response = await http.get(
+			Uri.encodeFull("https://randomuser.me/api/?results=10"),
+			headers: {
+				"Accept": "application/json"
+			}
+		);
+
+		this.setState(() {
+			data = json.decode(response.body)['results'];
+			load = false;
+		});
+
+		return "Success!";
+	}
+	
+	@override
+	void initState(){
+		super.initState();
+		this.getData();
+	}
+
 	@override
 	Widget build(BuildContext context) {
 		return MaterialApp(
@@ -16,10 +51,23 @@ class Following extends StatelessWidget {
 						onPressed:() => Navigator.pop(context, false),
 					)
 				),
-				body: Center(
-					child: Text('Following list'),
+				body: load ? Loader(): ListView.builder(
+					itemCount: data == null ? 0 : data.length,
+					itemBuilder: (BuildContext context, int index){
+
+						// Return Proper full-width containers
+						return ListTile(
+							leading: CircleAvatar(
+								// child: Text(data[index]['name']['first'][0])
+								backgroundImage: NetworkImage(data[index]['picture']['medium']),
+							),
+							title: Text(data[index]['name']['first'] + ' ' + data[index]['name']['last']),
+							subtitle: Text(data[index]['email'])
+						);
+					},
 				),
 			),
 		);
 	}
 }
+
