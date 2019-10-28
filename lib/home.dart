@@ -3,6 +3,7 @@ import './drawer/drawerContents.dart';
 import './drawer/profile.dart';
 import './drawer/follower.dart';
 import './drawer/following.dart';
+import 'package:medium_clone/article.dart';
 
 class Home extends StatefulWidget {
 	@override
@@ -27,24 +28,96 @@ class _HomeState extends State<Home> {
 				drawer: Drawer(
 					child: DrawerContents()
 				),
-				// backgroundColor: Colors.black,
+				backgroundColor: Colors.white,
 				appBar: AppBar(
 					title: Text('Home'),
-					//backgroundColor: Colors.black,
+					backgroundColor: Colors.black,
 					leading: Builder(
 						builder: (context) => IconButton(
 							icon: Icon(Icons.menu),
 							onPressed: () => Scaffold.of(context).openDrawer(),
 						)
-					)
+					),
+          actions: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(
+                right: 15
+              ),
+              child:Icon(
+              Icons.notifications_none,
+            ) ,
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                right: 10
+              ),
+              child:Icon(
+              Icons.search,
+            ) ,
+            )
+            
+          ],
 				),
 				body: Center(
-					child: Text(
-						'Medium home',
-						// style: TextStyle(color: Colors.white),
-					),
+					child: ListView(
+            children: <MediumArticle>[
+              
+              MediumArticle(
+              suggestedTopic: 'PROGRAMMING',
+              title:'Flutter is damn awesome and heres why',
+              user:'Vignesh V',
+              date: '25/7/19 . 160 min read',
+              icon: Icons.access_alarm,
+              ),
+              MediumArticle(
+              suggestedTopic: 'Woahh',
+              title:'Hello',
+              user:'Ok',
+              date: '25/7/19',
+              icon: Icons.local_pizza,
+              ),
+              
+              MediumArticle(
+              suggestedTopic: 'PROGRAMMING',
+              title:'Flutter is damn awesome and heres why',
+              user:'Vignesh V',
+              date: '25/7/19 . 160 min read',
+              icon: Icons.access_alarm,
+              ),
+              MediumArticle(
+              suggestedTopic: 'PROGRAMMING',
+              title:'Flutter is damn awesome and heres why',
+              user:'Vignesh V',
+              date: '25/7/19 . 160 min read',
+              icon: Icons.access_alarm,
+              ),
+              MediumArticle(
+              suggestedTopic: 'PROGRAMMING',
+              title:'Flutter is damn awesome and heres why',
+              user:'Vignesh V',
+              date: '25/7/19 . 160 min read',
+              icon: Icons.access_alarm,
+              ),
+              MediumArticle(
+              suggestedTopic: 'PROGRAMMING',
+              title:'Flutter is damn awesome and heres why',
+              user:'Vignesh V',
+              date: '25/7/19 . 160 min read',
+              icon: Icons.access_alarm,
+              ),
+              MediumArticle(
+              suggestedTopic: 'PROGRAMMING',
+              title:'Flutter is damn awesome and heres why',
+              user:'Vignesh V',
+              date: '25/7/19 . 160 min read',
+              icon: Icons.access_alarm,
+              ),
+            ],
+            
+          )
 				),
 			)
 		);
 	}
 }
+

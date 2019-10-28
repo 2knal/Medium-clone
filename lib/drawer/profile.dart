@@ -7,7 +7,7 @@ class Profile extends StatelessWidget {
 	Widget build(BuildContext context) {
 
 		final ScreenArguments args = ModalRoute.of(context).settings.arguments;
-		String name = args == null ? 'logged in user' : args.name;
+		String name = args == null ? 'User' : args.name;
 		// print(args);
 
 		return MaterialApp(
@@ -16,15 +16,63 @@ class Profile extends StatelessWidget {
 			),
 			home: Scaffold(
 				appBar: AppBar(
-					title: Text('User Profile'),
+					title: Text('Profile'),
 				    automaticallyImplyLeading: true,
 					leading: IconButton(icon:Icon(Icons.arrow_back),
 						onPressed:() => Navigator.pop(context, false),
-					)
+					),
+          actions: <Widget>[
+            Icon(
+              Icons.more_vert,
+            )
+          ],
 				),
-        		// Real Stuff goes here!
 				body: Center(
-					child: Text('Profile of ' + name),
+          
+					child: 
+          Container(
+            height: 1000,
+            child: ListView(
+            children: <Widget>
+            [
+            
+            Icon(Icons.account_circle,
+            size: 80,
+            ),
+            Text(name,
+            style: TextStyle(fontSize: 40),),
+            Divider(),
+            Container(
+              height: 200,
+              child:
+            ListView(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                  ListTile(
+								title: Text(
+									'Followers', 
+								),
+								onTap: () {
+									Navigator.pushNamed(context, "/follower");
+								},
+							),
+							ListTile(
+								title: Text(
+									'Following', 
+								),
+								onTap: () {
+									Navigator.pushNamed(context, "/following");
+								},
+              ),
+                ],)
+                
+            ],)
+            ),
+          ],)
+          ,
+          )
+          
 				),
 			),
 		);
