@@ -7,41 +7,121 @@ class DrawerContents extends StatelessWidget {
 		return ListView(
 			padding: EdgeInsets.zero,
 			children: <Widget>[
-				DrawerHeader(
-					child: Icon(Icons.account_circle, size: 150.0,),
+        Container(
+          height: 250,
+          child:DrawerHeader(
+					child: 
+          Padding(
+            padding: EdgeInsets.only(
+              right: 150,
+
+            ),
+          child:
+          Column(children: <Widget>[
+          Icon(Icons.account_circle, size: 100.0,),
+          Text(
+            'Vignesh V'
+          ),
+          ListTile(
+            title: Text(
+									'See Profile', 
+								),
+								onTap: () {
+									// Pass random data to emulate logged in user
+									Navigator.pushNamed(context, "/profile");
+								},
+          )
+          ],
+          ),
+          ),
+          
+          
 					decoration: BoxDecoration(
-						color: Colors.black45,
+						color: Colors.white,
 					),
-				),
+				),),
+				
 				Container(
 					//color: Colors.black45,
 					child: Column(
 						children: <Widget>[
 							ListTile(
 								title: Text(
-									'Profile', 
+									'Home', 
 								),
 								onTap: () {
 									// Pass random data to emulate logged in user
-									Navigator.pushNamed(context, "/profile");
+									Navigator.pushNamed(context, "/");
 								},
 							),
-							ListTile(
+              ListTile(
 								title: Text(
-									'Followers', 
+									'Audio', 
 								),
 								onTap: () {
-									Navigator.pushNamed(context, "/follower");
+									// Pass random data to emulate logged in user
+									Navigator.pushNamed(context, "/");
 								},
 							),
-							ListTile(
+              ListTile(
 								title: Text(
-									'Following', 
+									'Bookmarks', 
 								),
 								onTap: () {
-									Navigator.pushNamed(context, "/following");
+									// Pass random data to emulate logged in user
+									Navigator.pushNamed(context, "/");
 								},
 							),
+              ListTile(
+								title: Text(
+									'Interests', 
+								),
+								onTap: () {
+									// Pass random data to emulate logged in user
+									Navigator.pushNamed(context, "/");
+								},
+							),
+              Divider(),
+              ListTile(
+								title: Text(
+									'Become a member', 
+                  style: TextStyle(color: Colors.green),
+								),
+								onTap: () {
+									// Pass random data to emulate logged in user
+									Navigator.pushNamed(context, "/");
+								},
+							),
+              Divider(),
+              ListTile(
+								title: Text(
+									'New story', 
+								),
+								onTap: () {
+									// Pass random data to emulate logged in user
+									Navigator.pushNamed(context, "/");
+								},
+							),
+              ListTile(
+								title: Text(
+									'Stats', 
+								),
+								onTap: () {
+									// Pass random data to emulate logged in user
+									Navigator.pushNamed(context, "/");
+								},
+							),
+              ListTile(
+								title: Text(
+									'Stories', 
+								),
+								onTap: () {
+									// Pass random data to emulate logged in user
+									Navigator.pushNamed(context, "/");
+								},
+							),
+
+			
 						],
 					)
 				)
