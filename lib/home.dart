@@ -4,6 +4,7 @@ import './drawer/profile.dart';
 import './drawer/follower.dart';
 import './drawer/following.dart';
 import 'package:medium_clone/article.dart';
+import 'package:medium_clone/article-page.dart';
 
 class Home extends StatefulWidget {
 	@override
@@ -19,7 +20,8 @@ class _HomeState extends State<Home> {
 			routes: {
 				'/profile': (BuildContext context) => Profile(),
 				'/follower': (BuildContext context) => Follower(),
-				'/following': (BuildContext context) => Following()
+				'/following': (BuildContext context) => Following(),
+        '/article-page': (BuildContext context) => ArticlePage()
 			},
       		darkTheme: ThemeData(
 				brightness: Brightness.dark

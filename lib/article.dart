@@ -20,6 +20,7 @@ class MediumArticle extends StatelessWidget {
     return InkWell(
             onTap:(){
               print('hi');
+              Navigator.pushNamed(context, "/article-page");
             },
             child: 
      Padding(

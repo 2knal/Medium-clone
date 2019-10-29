@@ -50,6 +50,7 @@ class FollowerState extends State<Follower> {
 			),
 			home: Scaffold(
 				appBar: AppBar(
+          backgroundColor: Colors.black,
 					title: Text('Your Following'),
 				    automaticallyImplyLeading: true,
 					leading: IconButton(icon:Icon(Icons.arrow_back),
