@@ -8,18 +8,28 @@ class MediumArticle extends StatelessWidget {
     this.title,
     this.user,
     this.date,
+    this.text,
   }) : super(key: key);
   final IconData icon;
   final String suggestedTopic;
   final String title;
   final String user;
   final String date;
+  final String text;
   
   @override
   Widget build(BuildContext context) {
     return InkWell(
             onTap:(){
               print('hi');
+              Navigator.pushNamed(context, "/article-page",
+              arguments: ArtcileArgs(
+                suggestedTopic,
+                title,
+                user,
+                date, icon, text
+              ),
+              );
             },
             child: 
      Padding(
@@ -110,4 +120,15 @@ class MediumArticle extends StatelessWidget {
      ),
     );
   }
+}
+
+class ArtcileArgs{
+  
+  final String suggestedTopic;
+  final String title;
+  final String user;
+  final String date;
+  final IconData icon;
+  final String text;
+  ArtcileArgs(this.suggestedTopic, this.title, this.user, this.date, this.icon, this.text);
 }

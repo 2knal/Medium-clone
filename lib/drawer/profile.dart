@@ -16,6 +16,7 @@ class Profile extends StatelessWidget {
 			),
 			home: Scaffold(
 				appBar: AppBar(
+          backgroundColor: Colors.black,
 					title: Text('Profile'),
 				    automaticallyImplyLeading: true,
 					leading: IconButton(icon:Icon(Icons.arrow_back),
