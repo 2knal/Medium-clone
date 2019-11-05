@@ -11,9 +11,9 @@ class Profile extends StatelessWidget {
 		// print(args);
 
 		return MaterialApp(
-			darkTheme: ThemeData(
-				brightness: Brightness.dark
-			),
+			// darkTheme: ThemeData(
+			// 	brightness: Brightness.dark
+			// ),
 			home: Scaffold(
 				appBar: AppBar(
           backgroundColor: Colors.black,

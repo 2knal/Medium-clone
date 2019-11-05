@@ -7,39 +7,40 @@ class DrawerContents extends StatelessWidget {
 		return ListView(
 			padding: EdgeInsets.zero,
 			children: <Widget>[
-        Container(
-          height: 250,
-          child:DrawerHeader(
-					child: 
-          Padding(
-            padding: EdgeInsets.only(
-              right: 150,
+				Container(
+				height: 250,
+				child:DrawerHeader(
+							child: 
+				Padding(
+					padding: EdgeInsets.only(
+					right: 150,
 
-            ),
-          child:
-          Column(children: <Widget>[
-          Icon(Icons.account_circle, size: 100.0,),
-          Text(
-            'Vignesh V'
-          ),
-          ListTile(
-            title: Text(
-									'See Profile', 
-								),
-								onTap: () {
-									// Pass random data to emulate logged in user
-									Navigator.pushNamed(context, "/profile");
-								},
-          )
-          ],
-          ),
-          ),
-          
-          
-					decoration: BoxDecoration(
-						color: Colors.white,
 					),
-				),),
+				child:
+				Column(children: <Widget>[
+				Icon(Icons.account_circle, size: 100.0,),
+				Text(
+					'Vignesh V'
+				),
+				ListTile(
+					title: Text(
+											'See Profile', 
+										),
+										onTap: () {
+											// Pass random data to emulate logged in user
+											Navigator.pushNamed(context, "/profile");
+										},
+				)
+				],
+				),
+				),
+				
+				
+							decoration: BoxDecoration(
+								color: Colors.white10,
+							),
+						),
+				),
 				
 				Container(
 					//color: Colors.black45,
